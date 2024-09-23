@@ -1,0 +1,19 @@
+### Send POST request with json body
+POST http://localhost:8080/teacher
+Content-Type: application/json
+
+{
+  "companyCode" : "1",
+  "companyBranchCode" : "A1",
+  "financeCode" : "01",
+  "projectCode" : "01",
+  "componentCode" : "01",
+  "teacherId" : "A20",
+  "teacherName" : "Shohedul Islam",
+  "currentDesigId": "001",
+  "insUser" : "Maria",
+  "updUser" : "Hridi"
+}
+
+### GetRequest with json body
+GET http://localhost:8080/teacher
