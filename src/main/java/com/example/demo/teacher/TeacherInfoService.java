@@ -17,20 +17,20 @@ public class TeacherInfoService {
     }
 
     public void saveTeacher (
-            String teacherId, String CompanyBranchCode, String FinanceCode,
-            String companyCode, String ProjectCode, String ComponentCode,
-            String TeacherName, String CurrentDesigId, String InsUser, String UpdUser){
+            String teacherId, String companyBranchCode, String financeCode,
+            String companyCode, String projectCode, String componentCode,
+            String teacherName, String currentDesigId, String insUser, String updUser){
 
         TeacherInfo teacherInfo = new TeacherInfo();
         teacherInfo.setTeacherId(teacherId);
         teacherInfo.setCompanyBranchCode(companyBranchCode);
         teacherInfo.setFinanceCode(financeCode);
         teacherInfo.setCompanyCode(companyCode);
-        teacherInfo.setProjectCode(ProjectCode);
-        teacherInfo.setComponentCode(ComponentCode);
-        teacherInfo.setTeacherName(TeacherName);
-        teacherInfo.setCurrentDesigId(CurrentDesigId);
-        teacherInfo.setInsUser(InsUser);
+        teacherInfo.setProjectCode(projectCode);
+        teacherInfo.setComponentCode(componentCode);
+        teacherInfo.setTeacherName(teacherName);
+        teacherInfo.setCurrentDesigId(currentDesigId);
+        teacherInfo.setInsUser(insUser);
         teacherInfo.setCreateDate(new Date());
         teacherInfo.setUpdUser(updUser);
         teacherInfo.setUpdDate(new Date());
