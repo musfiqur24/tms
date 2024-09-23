@@ -1,19 +1,23 @@
 package com.example.demo.designation;
 
+import org.springframework.core.annotation.MergedAnnotations;
 import org.springframework.stereotype.Service;
+
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DesignationService {
 
-    private final DesignationRepository designationRepository;
+    private static DesignationRepository designationRepository = null;
 
     public DesignationService(DesignationRepository designationRepository) {
         this.designationRepository = designationRepository;
     }
+
 
     public void saveDesig(String desigCode, String desigDesc, String insUser, String updUser) {
 
@@ -46,6 +50,33 @@ public class DesignationService {
 
        }
        return dtoList;
+    }
+
+
+    public static void deleteDesignation(String desigCode) throws Exception {
+
+        Optional<Designation> optionalDesignation = designationRepository.findById(desigCode);
+
+        if (optionalDesignation.isPresent()) {
+            designationRepository.deleteById(desigCode);  // Delete room if it exists
+        } else {
+            throw new Exception("DesigCode not found");
+        }
+    }
+
+    public void updateDesignation(String desigCode, String desigDesc, String insUser, String updUser) throws Exception {
+        Optional<Designation> optionalDesignation = designationRepository.findById(desigCode);
+
+        if(optionalDesignation.isPresent()) {
+            Designation upDesignation = optionalDesignation.get();
+            upDesignation.setDesigDesc(desigDesc);
+            upDesignation.setInsUser(insUser);
+            upDesignation.setUpdUser(updUser);
+            designationRepository.save(upDesignation);
+        }else {
+            throw new Exception("DesigCode not found");
+        }
+
     }
 
 }

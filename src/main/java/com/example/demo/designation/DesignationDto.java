@@ -1,8 +1,13 @@
 package com.example.demo.designation;
 
+import jakarta.persistence.Column;
+
+import java.util.Date;
+
 public class DesignationDto {
 
     private String desigCode;
+
     private String desigDesc;
 
     private String insUser;
