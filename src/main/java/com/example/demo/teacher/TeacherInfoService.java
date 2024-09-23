@@ -1,6 +1,7 @@
 package com.example.demo.teacher;
 
 
+import com.example.demo.designation.Designation;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,45 +17,30 @@ public class TeacherInfoService {
         this.teacherInfoRepository = teacherInfoRepository;
     }
 
-    public void saveTeacher (
-            String teacherId, String companyBranchCode, String financeCode,
-            String companyCode, String projectCode, String componentCode,
-            String teacherName, String currentDesigId, String insUser, String updUser){
-
+    public void saveTeacher(TeacherInfoDto dto) {
         TeacherInfo teacherInfo = new TeacherInfo();
-        teacherInfo.setTeacherId(teacherId);
-        teacherInfo.setCompanyBranchCode(companyBranchCode);
-        teacherInfo.setFinanceCode(financeCode);
-        teacherInfo.setCompanyCode(companyCode);
-        teacherInfo.setProjectCode(projectCode);
-        teacherInfo.setComponentCode(componentCode);
-        teacherInfo.setTeacherName(teacherName);
-        teacherInfo.setCurrentDesigId(currentDesigId);
-        teacherInfo.setInsUser(insUser);
+        teacherInfo.setTeacherId(dto.getTeacherId());
+        teacherInfo.setCompanyBranchCode(dto.getCompanyBranchCode());
+        teacherInfo.setFinanceCode(dto.getFinanceCode());
+        teacherInfo.setCompanyCode(dto.getCompanyCode());
+        teacherInfo.setProjectCode(dto.getProjectCode());
+        teacherInfo.setComponentCode(dto.getComponentCode());
+        teacherInfo.setTeacherName(dto.getTeacherName());
+        teacherInfo.setDesignation(new Designation(dto.getDesignationCode()));
+        teacherInfo.setInsUser(dto.getInsUser());
         teacherInfo.setCreateDate(new Date());
-        teacherInfo.setUpdUser(updUser);
-        teacherInfo.setUpdDate(new Date());
-
-//        System.out.println("Teacher Info Data " + teacherId+ " "+
-//                CompanyBranchCode+ " "+
-//                FinanceCode+ " "+
-//                companyCode+ " "+
-//                ProjectCode+ " "+
-//                ComponentCode+ " "+
-//                TeacherName+ " "+
-//                CurrentDesigId+ " "+
-//                InsUser+ " "+
-//                UpdUser);
+//        teacherInfo.setUpdUser(dto);
+//        teacherInfo.setUpdDate(new Date());
         teacherInfoRepository.save(teacherInfo);
 
     }
 
-    public List<TeacherInfo> findAll() {
+    public List<TeacherInfoDto> findAll() {
         List<TeacherInfo> List = teacherInfoRepository.findAll();
-        List<TeacherInfo> dtoList = new ArrayList<>();
+        List<TeacherInfoDto> dtoList = new ArrayList<>();
 
         for (TeacherInfo teacher : List) {
-            TeacherInfo dto = new TeacherInfo();
+            TeacherInfoDto dto = new TeacherInfoDto();
             dto.setTeacherId(teacher.getTeacherId());
             dto.setCompanyBranchCode(teacher.getTeacherId());
             dto.setFinanceCode(teacher.getFinanceCode());
@@ -62,12 +48,13 @@ public class TeacherInfoService {
             dto.setProjectCode(teacher.getProjectCode());
             dto.setComponentCode(teacher.getComponentCode());
             dto.setTeacherName(teacher.getTeacherName());
-            dto.setCurrentDesigId(teacher.getCurrentDesigId());
+            dto.setDesignationCode(teacher.getDesignation().getDesigCode());
+            dto.setDesignationName(teacher.getDesignation().getDesigDesc());
             dto.setInsUser(teacher.getInsUser());
             dto.setUpdUser(teacher.getUpdUser());
             dtoList.add(dto);
         }
-        System.out.println("data"+ dtoList);
+        System.out.println("data" + dtoList);
         return dtoList;
     }
 

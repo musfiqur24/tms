@@ -8,11 +8,10 @@ Content-Type: application/json
   "financeCode" : "01",
   "projectCode" : "01",
   "componentCode" : "01",
-  "teacherId" : "A20",
-  "teacherName" : "Shohedul Islam",
-  "currentDesigId": "001",
-  "insUser" : "Maria",
-  "updUser" : "Hridi"
+  "teacherId" : "A21",
+  "teacherName" : "Shohedul Khan",
+  "designationCode": "001",
+  "insUser" : "Maria"
 }
 
 ### GetRequest with json body
