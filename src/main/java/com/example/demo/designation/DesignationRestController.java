@@ -9,7 +9,6 @@ public class DesignationRestController {
 
     private final DesignationService designationService;
 
-
     public DesignationRestController(DesignationService designationService) {
         this.designationService = designationService;
     }
