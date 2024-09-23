@@ -27,7 +27,7 @@ public class TeacherInfoService {
         teacherInfo.setFinanceCode(FinanceCode);
         teacherInfo.setCompanyCode(companyCode);
         teacherInfo.setProjectCode(ProjectCode);
-        teacherInfo.setCompanyCode(ComponentCode);
+        teacherInfo.setCompanyCode(CompanyBranchCode);
         teacherInfo.setTeacherName(TeacherName);
         teacherInfo.setCurrentDesigId(CurrentDesigId);
         teacherInfo.setInsUser(InsUser);
