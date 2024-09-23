@@ -23,7 +23,7 @@ public class TeacherInfoRestController {
                     dto.getCompanyCode(), dto.getProjectCode(), dto.getComponentCode(),
                     dto.getTeacherName(), dto.getCurrentDesigId(), dto.getInsUser(), dto.getUpdUser());
         } catch (Exception e) {
-            return "Internal Server Error";
+            return "Internal Server Error"+e;
         }
         return "Return save successfully";
     }
