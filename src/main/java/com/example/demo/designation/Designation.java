@@ -30,6 +30,53 @@ public class Designation {
     @Column (name = "UPD_DATE")
     private Date updDate;
 
+    public String getDesigCode() {
+        return desigCode;
+    }
+
+    public void setDesigCode(String desigCode) {
+        this.desigCode = desigCode;
+    }
+
+    public String getDesigDesc() {
+        return desigDesc;
+    }
+
+    public void setDesigDesc(String desigDesc) {
+        this.desigDesc = desigDesc;
+    }
+
+    public String getInsUser() {
+        return insUser;
+    }
+
+    public void setInsUser(String insUser) {
+        this.insUser = insUser;
+    }
+
+    public Date getInsDate() {
+        return insDate;
+    }
+
+    public void setInsDate(Date insDate) {
+        this.insDate = insDate;
+    }
+
+    public String getUpdUser() {
+        return updUser;
+    }
+
+    public void setUpdUser(String updUser) {
+        this.updUser = updUser;
+    }
+
+    public Date getUpdDate() {
+        return updDate;
+    }
+
+    public void setUpdDate(Date updDate) {
+        this.updDate = updDate;
+    }
 }
 
 //    DESIGNATION
