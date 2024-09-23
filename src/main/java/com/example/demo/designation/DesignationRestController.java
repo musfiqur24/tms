@@ -54,12 +54,11 @@ public class DesignationRestController {
 
 
     @GetMapping
-    public List<DesignationDto> show(){
+    public List<DesignationDto> show() {
 
-        try{
+        try {
             return designationService.show();
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             return Collections.emptyList();
         }
 

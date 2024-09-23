@@ -1,6 +1,7 @@
 package com.example.demo.teacher;
 
 import org.springframework.web.bind.annotation.*;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -16,20 +17,17 @@ public class TeacherInfoRestController {
     }
 
     @PostMapping
-    public String doSave(@RequestBody TeacherInfoDto dto){
+    public String doSave(@RequestBody TeacherInfoDto dto) {
         try {
-            teacherInfoService.saveTeacher(
-                    dto.getTeacherId(), dto.getCompanyBranchCode(), dto.getFinanceCode(),
-                    dto.getCompanyCode(), dto.getProjectCode(), dto.getComponentCode(),
-                    dto.getTeacherName(), dto.getCurrentDesigId(), dto.getInsUser(), dto.getUpdUser());
+            teacherInfoService.saveTeacher(dto);
         } catch (Exception e) {
-            return "Internal Server Error"+e;
+            return "Internal Server Error" + e;
         }
         return "Return save successfully";
     }
 
     @GetMapping
-    public List<TeacherInfo> findAll() {
+    public List<TeacherInfoDto> findAll() {
         try {
             return teacherInfoService.findAll();
         } catch (Exception e) {
