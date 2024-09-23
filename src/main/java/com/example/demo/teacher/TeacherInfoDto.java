@@ -1,8 +1,13 @@
 package com.example.demo.teacher;
 
 import jakarta.persistence.Column;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
+
+@Getter
+@Setter
 
 public class TeacherInfoDto {
 
@@ -17,80 +22,40 @@ public class TeacherInfoDto {
     private String insUser;
     private String updUser;
 
-    public String getTeacherId() {
-        return teacherId;
-    }
-
     public void setTeacherId(String teacherId) {
         this.teacherId = teacherId;
-    }
-
-    public String getCompanyCode() {
-        return companyCode;
     }
 
     public void setCompanyCode(String companyCode) {
         this.companyCode = companyCode;
     }
 
-    public String getCompanyBranchCode() {
-        return companyBranchCode;
-    }
-
     public void setCompanyBranchCode(String companyBranchCode) {
         this.companyBranchCode = companyBranchCode;
-    }
-
-    public String getFinanceCode() {
-        return financeCode;
     }
 
     public void setFinanceCode(String financeCode) {
         this.financeCode = financeCode;
     }
 
-    public String getProjectCode() {
-        return projectCode;
-    }
-
     public void setProjectCode(String projectCode) {
         this.projectCode = projectCode;
-    }
-
-    public String getComponentCode() {
-        return componentCode;
     }
 
     public void setComponentCode(String componentCode) {
         this.componentCode = componentCode;
     }
 
-    public String getTeacherName() {
-        return teacherName;
-    }
-
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
-    }
-
-    public String getCurrentDesigId() {
-        return currentDesigId;
     }
 
     public void setCurrentDesigId(String currentDesigId) {
         this.currentDesigId = currentDesigId;
     }
 
-    public String getInsUser() {
-        return insUser;
-    }
-
     public void setInsUser(String insUser) {
         this.insUser = insUser;
-    }
-
-    public String getUpdUser() {
-        return updUser;
     }
 
     public void setUpdUser(String updUser) {
