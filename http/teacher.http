@@ -3,8 +3,8 @@ POST http://localhost:8080/teacher
 Content-Type: application/json
 
 {
-  "companyCode" : "1",
-  "companyBranchCode" : "A1",
+  "companyCode" : "001",
+  "companyBranchCode" : "01",
   "financeCode" : "01",
   "projectCode" : "01",
   "componentCode" : "01",
