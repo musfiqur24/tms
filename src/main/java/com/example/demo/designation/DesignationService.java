@@ -33,7 +33,7 @@ public class DesignationService {
     public List<DesignationDto> show (){
        List<Designation> list = designationRepository.findAll();
        List<DesignationDto> dtoList = new ArrayList<>();
-
+//        System.out.println();
        for (Designation designation : list){
 
            DesignationDto dto = new DesignationDto();
