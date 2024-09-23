@@ -18,11 +18,35 @@ public class Designation {
     @Column (name = "DESIG_DESC")
     private String desigDesc;
 
+    public String getDesigDesc() {
+        return desigDesc;
+    }
+
+    public void setDesigDesc(String desigDesc) {
+        this.desigDesc = desigDesc;
+    }
+
     @Column (name = "INS_USER")
     private String insUser;
 
+    public String getInsUser() {
+        return insUser;
+    }
+
+    public void setInsUser(String insUser) {
+        this.insUser = insUser;
+    }
+
     @Column (name = "INS_DATE")
     private Date insDate;
+
+    public String getUpdUser() {
+        return updUser;
+    }
+
+    public void setUpdUser(String updUser) {
+        this.updUser = updUser;
+    }
 
     @Column (name = "UPD_USER")
     private String updUser;
