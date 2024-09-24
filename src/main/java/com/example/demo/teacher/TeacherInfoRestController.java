@@ -34,6 +34,16 @@ public class TeacherInfoRestController {
             return Collections.emptyList();
         }
     }
+@PutMapping("/{teacherId}")
+    public String updateTeacher(@PathVariable String teacherId, @RequestBody TeacherInfoDto dto)
+{
+    try {
+    return  teacherInfoService.updateTeacher(teacherId,dto);
+    } catch (Exception e){
+        return "Update Failed";
+    }
+}
+
 
 
 }

@@ -34,7 +34,23 @@ public class TeacherInfoService {
         teacherInfoRepository.save(teacherInfo);
 
     }
+public String updateTeacher (String teacherId, TeacherInfoDto dto) throws Exception {
+TeacherInfo teacherInfo = teacherInfoRepository.findById(teacherId).orElseThrow(() -> new Exception("Teacher Not Found "));
 
+   teacherInfo.setCompanyCode(dto.getCompanyCode());
+   teacherInfo.setCompanyBranchCode(dto.getCompanyBranchCode());
+   teacherInfo.setFinanceCode(dto.getFinanceCode());
+   teacherInfo.setComponentCode(dto.getComponentCode());
+   teacherInfo.setDesignation(new Designation(dto.getDesignationCode()));
+   teacherInfo.setTeacherName(dto.getTeacherName());
+   teacherInfo.setProjectCode(dto.getProjectCode());
+   teacherInfo.setInsUser(dto.getInsUser());
+   teacherInfo.setCreateDate(new Date());
+
+   teacherInfoRepository.save(teacherInfo);
+   return "Teacher Updated Successfully";
+
+}
     public List<TeacherInfoDto> findAll() {
         List<TeacherInfo> List = teacherInfoRepository.findAll();
         List<TeacherInfoDto> dtoList = new ArrayList<>();

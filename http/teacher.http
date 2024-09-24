@@ -14,5 +14,21 @@ Content-Type: application/json
   "insUser" : "Maria"
 }
 
+### Send PUT request with json body
+PUT http://localhost:8080/teacher/A21
+Content-Type: application/json
+
+{
+  "companyCode" : "001",
+  "companyBranchCode" : "01",
+  "financeCode" : "01",
+  "projectCode" : "01",
+  "componentCode" : "01",
+  "teacherName" : "Mr Shohedul Khan",
+  "designationCode": "001",
+  "insUser" : "Musfiqur"
+}
+
+
 ### GetRequest with json body
 GET http://localhost:8080/teacher
