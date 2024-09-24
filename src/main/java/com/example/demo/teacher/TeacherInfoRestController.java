@@ -38,7 +38,7 @@ public class TeacherInfoRestController {
     @PutMapping("/{teacherId}")
     public String updateTeacher(@PathVariable String teacherId, @RequestBody TeacherInfoDto dto) {
         try {
-            return teacherInfoService.updateTeacher(teacherId, dto);
+            return teacherInfoService.updateTeacherInfo(teacherId, dto);
         } catch (Exception e) {
             return "Update Failed";
         }
