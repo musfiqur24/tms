@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### Send PUT request with json body
-PUT http://localhost:8080/teacher/A21
+PUT http://localhost:8080/teacher/A20
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
   "financeCode" : "01",
   "projectCode" : "01",
   "componentCode" : "01",
-  "teacherName" : "Mr Shohedul Khan",
+  "teacherName" : "Mr Shohedul Islam",
   "designationCode": "001",
   "insUser" : "Musfiqur"
 }
