@@ -32,3 +32,20 @@ Content-Type: application/json
 
 ### GetRequest with json body
 GET http://localhost:8080/teacher
+
+###
+PUT http://localhost:8080/teacher/A20
+Content-Type: application/json
+
+{
+  "companyCode": "001",
+  "companyBranchCode": "01",
+  "financeCode": "01",
+  "projectCode": "01",
+  "componentCode": "01",
+  "teacherName": "Shohedul Musfiq",
+  "designationCode": "001",
+  "designationName": "Hi there!",
+  "insUser": "Mariaaa",
+  "updUser": "Hridi"
+}

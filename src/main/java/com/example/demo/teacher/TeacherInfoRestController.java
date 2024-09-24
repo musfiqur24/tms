@@ -45,5 +45,15 @@ public class TeacherInfoRestController {
 }
 
 
+    @PutMapping("/{teacherId}")
+    public String updateTeacherInfo(@PathVariable String teacherId, @RequestBody TeacherInfoDto dto) {
+        try {
+            TeacherInfoService.updateTeacherInfo(teacherId, dto);
+        } catch (Exception e) {
+            return "Internal Server Error";
+        }
+        return "Teacher-Info updated successfully";
+    }
+
 
 }
