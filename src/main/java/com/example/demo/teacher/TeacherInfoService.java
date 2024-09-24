@@ -7,11 +7,12 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TeacherInfoService {
 
-    private final TeacherInfoRepository teacherInfoRepository;
+    private static TeacherInfoRepository teacherInfoRepository = null;
 
     public TeacherInfoService(TeacherInfoRepository teacherInfoRepository) {
         this.teacherInfoRepository = teacherInfoRepository;
@@ -42,7 +43,7 @@ public class TeacherInfoService {
         for (TeacherInfo teacher : List) {
             TeacherInfoDto dto = new TeacherInfoDto();
             dto.setTeacherId(teacher.getTeacherId());
-            dto.setCompanyBranchCode(teacher.getTeacherId());
+            dto.setCompanyBranchCode(teacher.getCompanyBranchCode());
             dto.setFinanceCode(teacher.getFinanceCode());
             dto.setCompanyCode(teacher.getCompanyCode());
             dto.setProjectCode(teacher.getProjectCode());
@@ -57,6 +58,27 @@ public class TeacherInfoService {
         System.out.println("data" + dtoList);
         return dtoList;
     }
+    public static void updateTeacherInfo(String teacherId, TeacherInfoDto dto) throws Exception {
+        Optional<TeacherInfo> optionalTeacherInfo = teacherInfoRepository.findById(teacherId);
 
+        if(optionalTeacherInfo.isPresent()) {
+            TeacherInfo updateTeacherInfo = optionalTeacherInfo.get();
+            updateTeacherInfo.setCompanyBranchCode(dto.getCompanyBranchCode());
+            updateTeacherInfo.setFinanceCode(dto.getFinanceCode());
+            updateTeacherInfo.setCompanyCode(dto.getCompanyCode());
+            updateTeacherInfo.setProjectCode(dto.getProjectCode());
+            updateTeacherInfo.setComponentCode(dto.getComponentCode());
+            updateTeacherInfo.setTeacherName(dto.getTeacherName());
+            updateTeacherInfo.setDesignation(new Designation(dto.getDesignationCode()));
+            updateTeacherInfo.setInsUser(dto.getInsUser());
+            updateTeacherInfo.setCreateDate(new Date());
+//        teacherInfo.setUpdUser(dto);
+//        teacherInfo.setUpdDate(new Date());
+            teacherInfoRepository.save(updateTeacherInfo);
+        }else {
+            throw new Exception("TeacherId not found");
+        }
+
+    }
 
 }
