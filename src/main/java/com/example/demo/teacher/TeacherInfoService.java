@@ -35,23 +35,25 @@ public class TeacherInfoService {
         teacherInfoRepository.save(teacherInfo);
 
     }
-public String updateTeacher (String teacherId, TeacherInfoDto dto) throws Exception {
-TeacherInfo teacherInfo = teacherInfoRepository.findById(teacherId).orElseThrow(() -> new Exception("Teacher Not Found "));
 
-   teacherInfo.setCompanyCode(dto.getCompanyCode());
-   teacherInfo.setCompanyBranchCode(dto.getCompanyBranchCode());
-   teacherInfo.setFinanceCode(dto.getFinanceCode());
-   teacherInfo.setComponentCode(dto.getComponentCode());
-   teacherInfo.setDesignation(new Designation(dto.getDesignationCode()));
-   teacherInfo.setTeacherName(dto.getTeacherName());
-   teacherInfo.setProjectCode(dto.getProjectCode());
-   teacherInfo.setInsUser(dto.getInsUser());
-   teacherInfo.setCreateDate(new Date());
+    public String updateTeacher(String teacherId, TeacherInfoDto dto) throws Exception {
+        TeacherInfo teacherInfo = teacherInfoRepository.findById(teacherId).orElseThrow(() -> new Exception("Teacher Not Found "));
 
-   teacherInfoRepository.save(teacherInfo);
-   return "Teacher Updated Successfully";
+        teacherInfo.setCompanyCode(dto.getCompanyCode());
+        teacherInfo.setCompanyBranchCode(dto.getCompanyBranchCode());
+        teacherInfo.setFinanceCode(dto.getFinanceCode());
+        teacherInfo.setComponentCode(dto.getComponentCode());
+        teacherInfo.setDesignation(new Designation(dto.getDesignationCode()));
+        teacherInfo.setTeacherName(dto.getTeacherName());
+        teacherInfo.setProjectCode(dto.getProjectCode());
+        teacherInfo.setInsUser(dto.getInsUser());
+        teacherInfo.setCreateDate(new Date());
 
-}
+        teacherInfoRepository.save(teacherInfo);
+        return "Teacher Updated Successfully";
+
+    }
+
     public List<TeacherInfoDto> findAll() {
         List<TeacherInfo> List = teacherInfoRepository.findAll();
         List<TeacherInfoDto> dtoList = new ArrayList<>();
@@ -74,10 +76,11 @@ TeacherInfo teacherInfo = teacherInfoRepository.findById(teacherId).orElseThrow(
         System.out.println("data" + dtoList);
         return dtoList;
     }
+
     public static void updateTeacherInfo(String teacherId, TeacherInfoDto dto) throws Exception {
         Optional<TeacherInfo> optionalTeacherInfo = teacherInfoRepository.findById(teacherId);
 
-        if(optionalTeacherInfo.isPresent()) {
+        if (optionalTeacherInfo.isPresent()) {
             TeacherInfo updateTeacherInfo = optionalTeacherInfo.get();
             updateTeacherInfo.setCompanyBranchCode(dto.getCompanyBranchCode());
             updateTeacherInfo.setFinanceCode(dto.getFinanceCode());
@@ -91,18 +94,18 @@ TeacherInfo teacherInfo = teacherInfoRepository.findById(teacherId).orElseThrow(
 //        teacherInfo.setUpdUser(dto);
 //        teacherInfo.setUpdDate(new Date());
             teacherInfoRepository.save(updateTeacherInfo);
-        }else {
+        } else {
             throw new Exception("TeacherId not found");
         }
 
     }
 
-public void deleteTeacher (String teacherId){
-        if(teacherInfoRepository.existsById(teacherId)){
+    public void deleteTeacher(String teacherId) {
+        if (teacherInfoRepository.existsById(teacherId)) {
             teacherInfoRepository.deleteById(teacherId);
-        }else {
-            throw  new RuntimeException("Teacher Not Found");
+        } else {
+            throw new RuntimeException("Teacher Not Found");
         }
-}
+    }
 
 }
