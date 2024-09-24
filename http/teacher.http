@@ -32,3 +32,6 @@ Content-Type: application/json
 
 ### GetRequest with json body
 GET http://localhost:8080/teacher
+
+### Delete Request with json body
+DELETE http://localhost:8080/teacher/A21
