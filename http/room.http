@@ -5,9 +5,9 @@ Content-Type: application/json
 {
   "desigCode": "001",
   "desigDesc": "Mathematics Teacher",
-  "insUser": "Teacher",
-  "updUser": "No"
+  "insUser": "Teacher"
 }
+
 ### Get request with json body
 GET http://localhost:8080/designation
 Content-Type: application/json

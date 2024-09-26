@@ -1,5 +1,7 @@
 package com.example.demo.teacher;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -32,6 +34,14 @@ public class TeacherInfoRestController {
             return teacherInfoService.findAll();
         } catch (Exception e) {
             return Collections.emptyList();
+        }
+    }
+    public ResponseEntity<Long> getTeacherCount(){
+        try {
+            long teacherCount = teacherInfoService.countTeachers();
+            return ResponseEntity.ok(teacherCount);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(0L);
         }
     }
 
