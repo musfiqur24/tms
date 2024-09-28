@@ -18,6 +18,10 @@ public class TeacherInfoService {
         this.teacherInfoRepository = teacherInfoRepository;
     }
 
+        public long countTeachers() {
+            return teacherInfoRepository.count();
+        }
+
     public void saveTeacher(TeacherInfoDto dto) {
         TeacherInfo teacherInfo = new TeacherInfo();
         System.out.println(dto.getTeacherId());

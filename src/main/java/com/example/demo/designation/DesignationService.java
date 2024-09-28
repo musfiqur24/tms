@@ -18,6 +18,9 @@ public class DesignationService {
         this.designationRepository = designationRepository;
     }
 
+    public long countDesignations() {
+        return designationRepository.count();  // Assuming you're using JpaRepository
+    }
 
     public void saveDesig(String desigCode, String desigDesc, String insUser, String updUser) {
 

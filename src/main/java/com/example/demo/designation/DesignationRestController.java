@@ -63,6 +63,15 @@ public class DesignationRestController {
         }
 
     }
+
+    public ResponseEntity<Long> getDesignationCount(){
+        try {
+            long designationCount = designationService.countDesignations();
+            return ResponseEntity.ok(designationCount);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(0L);
+        }
+    }
 }
 
 

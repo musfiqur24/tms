@@ -3,11 +3,11 @@ POST http://localhost:8080/designation
 Content-Type: application/json
 
 {
-  "desigCode": "071",
-  "desigDesc": "Korean Teacher",
-  "insUser": "Mahid"
-
+  "desigCode": "010",
+  "desigDesc": "Bengali Teacher",
+  "insUser": "Full-Time Teacher"
 }
+
 ### Get request with json body
 GET http://localhost:8080/designation
 Content-Type: application/json
