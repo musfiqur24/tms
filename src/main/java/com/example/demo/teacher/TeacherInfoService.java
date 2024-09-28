@@ -20,6 +20,8 @@ public class TeacherInfoService {
 
     public void saveTeacher(TeacherInfoDto dto) {
         TeacherInfo teacherInfo = new TeacherInfo();
+        System.out.println(dto.getTeacherId());
+        System.out.println(dto.getTeacherName());
         teacherInfo.setTeacherId(dto.getTeacherId());
         teacherInfo.setCompanyBranchCode(dto.getCompanyBranchCode());
         teacherInfo.setFinanceCode(dto.getFinanceCode());
@@ -32,8 +34,8 @@ public class TeacherInfoService {
         teacherInfo.setCreateDate(new Date());
 //        teacherInfo.setUpdUser(dto);
 //        teacherInfo.setUpdDate(new Date());
-        teacherInfoRepository.save(teacherInfo);
-
+       TeacherInfo resutl =  teacherInfoRepository.save(teacherInfo);
+        System.out.println("result"+resutl.getTeacherName());
     }
 
 

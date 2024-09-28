@@ -1,6 +1,9 @@
 package com.example.demo.teacher;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 @Getter
@@ -12,6 +15,8 @@ public class TeacherInfoDto {
     private String financeCode;
     private String projectCode;
     private String componentCode;
+    @NotNull(message = "Teacher name can't be null")
+    @NotEmpty(message = "Teacher name can't be empty")
     private String teacherName;
     private String designationCode;
     private String designationName;
