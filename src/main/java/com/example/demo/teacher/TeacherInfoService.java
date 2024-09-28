@@ -65,7 +65,7 @@ public class TeacherInfoService {
         return dtoList;
     }
 
-    public String updateTeacherInfo(String teacherId, TeacherInfoDto dto) throws Exception {
+    public static void updateTeacherInfo(String teacherId, TeacherInfoDto dto) throws Exception {
         Optional<TeacherInfo> optionalTeacherInfo = teacherInfoRepository.findById(teacherId);
 
         if (optionalTeacherInfo.isPresent()) {
@@ -85,8 +85,6 @@ public class TeacherInfoService {
         } else {
             throw new Exception("TeacherId not found");
         }
-
-        return teacherId;
     }
 
     public void deleteTeacher(String teacherId) {

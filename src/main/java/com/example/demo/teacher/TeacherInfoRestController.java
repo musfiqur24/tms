@@ -48,12 +48,13 @@ public class TeacherInfoRestController {
     }
 
     @PutMapping("/{teacherId}")
-    public String updateTeacher(@PathVariable String teacherId, @RequestBody TeacherInfoDto dto) {
+    public String updateTeacherInfo(@PathVariable String teacherId, @RequestBody TeacherInfoDto dto) {
         try {
-            return teacherInfoService.updateTeacherInfo(teacherId, dto);
+            TeacherInfoService.updateTeacherInfo(teacherId, dto);
         } catch (Exception e) {
-            return "Update Failed";
+            return "Internal Server Error";
         }
+        return "Teacher-Info updated successfully";
     }
 @DeleteMapping("/{teacherId}")
     public String deleteTeacher (@PathVariable String teacherId){
