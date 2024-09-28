@@ -8,10 +8,10 @@ Content-Type: application/json
   "financeCode" : "01",
   "projectCode" : "01",
   "componentCode" : "01",
-  "teacherId" : "A21",
-  "teacherName" : "Shohedul Khan",
+  "teacherId" : "A98",
+  "teacherName" : "Musfiqur Rahman",
   "designationCode": "001",
-  "insUser" : "Maria"
+  "insUser" : "Hridi"
 }
 
 ### Send PUT request with json body
