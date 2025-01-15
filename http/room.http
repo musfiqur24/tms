@@ -3,8 +3,8 @@ POST http://localhost:8080/designation
 Content-Type: application/json
 
 {
-  "desigCode": "010",
-  "desigDesc": "Bengali Teacher",
+  "desigCode": "006",
+  "desigDesc": "Geography Teacher",
   "insUser": "Full-Time Teacher"
 }
 
